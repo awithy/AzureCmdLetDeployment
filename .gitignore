@@ -1,0 +1,24 @@
+_ReSharper*
+obj
+*.suo
+*.ncb
+binaries
+CLI Debug
+*.user
+.svn
+*.sln.cache
+Releases
+build
+TestResult.xml
+*.VisualState.xml
+*.svclog
+*.log
+*.csx
+*.sln.docstates
+*.dotCover
+*.mar
+csx
+_UpgradeReport_Files
+UpgradeLog.xml
+*.orig
+log.txt

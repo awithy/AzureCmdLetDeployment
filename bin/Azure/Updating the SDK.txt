@@ -1,0 +1,28 @@
+To update our code to use a new version of the SDK, you need to do the following:
+
+MAKE SURE YOU HAVE NO PENDING CHANGES...
+
+1) Install the newer SDK (ex. v1.8) using the normal installation pattern, including the VS tools.
+2) Copy the new bits from the Program Files (x86)\MSBuild folder into the MSBuild folder here.  Look for 
+    the location of the .targets file to see where this is.
+3) Copy the new bits from the Program Files\Windows Azure SDK version-specific subfolder to the SDK folder
+4) Goto ..\lib\AzureSDK and update DLLs in here with the latest from the SDK.  Also, remember to update 
+   the x64 and x86 versions of msshrtmi.dll (don't worry about the msshrtmi.dll in the AzureSDK folder, 
+   it is replaced when we build with the relevant version depending on the target platform).
+5) Open AzureComputeFull.sln - visual studio will ask you to upgrade the sln.  Say yes, you have no choice.
+   It will now make a right mess of your csproj files.  git checkout *.csproj to undo what it's done (it
+   breaks all your project references and adds a load of crap we don't need, well, we might need, but I guess
+   you'll find that out).
+   
+   You should see it has been so kind as to update the ccproj etc files with whatever they changed...  Have
+   a check to see what it's done just in case it's gone mad.
+8) test by doing the 
+    following:
+       Hit F5 from within the app
+       Run all the tests
+       Do a compile and package
+       Run the selenium tests
+       
+       Note:  Because we don't uninstall the SDK locally, things will be got from the GAC.  So only way to 
+       know for sure is commit it and try it somewhere which doesn't have the SDK - i.e. the build box.  There
+       may also be issues with missing msbuild files as any new ones will need to be copied into the repo.

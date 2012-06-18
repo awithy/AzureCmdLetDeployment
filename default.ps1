@@ -74,7 +74,7 @@ function Delete-DeploymentIfExists($serviceName) {
 }
 
 function Get-Cert {
-   return New-Object System.Security.Cryptography.X509Certificates.X509Certificate2(".\lib\AzureCertificate\AzureMgmt.pfx", "12345")    #<--modify
+   return New-Object System.Security.Cryptography.X509Certificates.X509Certificate2(".\lib\AzureCertificate\AzureMgmt.pfx", "<certificate-password>")    #<--modify
 }
 
 function WaitFor-Operation($operation) {

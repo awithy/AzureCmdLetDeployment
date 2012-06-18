@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SupportPortal.Utility
+namespace WebRole.Utility
 {
     public interface IRoleEnvironment
     {

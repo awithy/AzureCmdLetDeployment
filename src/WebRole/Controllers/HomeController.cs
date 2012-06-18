@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SupportPortal.Controllers
+namespace WebRole.Controllers
 {
     public class HomeController : Controller
     {
